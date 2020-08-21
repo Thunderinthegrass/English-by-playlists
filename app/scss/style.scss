@@ -1,0 +1,259 @@
+// @import '../../node_modules/slick-carousel/slick/slick';
+// @import '../../node_modules/magnific-popup/dist/magnific-popup';
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+*,
+::before,
+::after{
+  box-sizing: border-box;
+}
+body{
+  font-family: "Fira Sans", sans-serif;
+  color: #fff;
+  background: #f0d4e0;
+}
+h1{
+  text-transform: uppercase;
+  text-align: center;
+}
+h2{
+  color: #72d4e0;
+  text-align: center;
+}
+tr{
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+td{
+  position: relative;
+}
+.table-wrapper{
+  position: relative;
+}
+.button-view-wrapper-left{
+  position: absolute;
+  top: 39px;
+  left: 194px;
+}
+.button-view{
+  display: block;
+  width: 41px;
+  height: 41px;
+  border: 1px solid #fff;
+  border-top: none;
+  background: #EBA8C4;
+  padding: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  outline: none;
+}
+.container{
+  width: 1170px;
+  margin: 0 auto;
+}
+.mask-btn{
+  position: fixed;
+  top: 118px;
+  right: 250px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.mask-btn-rus{
+  position: fixed;
+  top: 118px;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  z-index: 1;  
+}
+.table-check[type="checkbox"]{
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: #eba8c4;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  position: relative;
+  -webkit-appearance: none;
+  outline: none;
+  &::before{
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: #95e7c1;
+    transform: translateX(25px);
+    transition: .5s;
+  }
+}
+.table-check-rus[type="checkbox"]{
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: #eba8c4;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  position: relative;
+  -webkit-appearance: none;
+  outline: none;
+  &::before{
+    position: absolute;
+    content: "";
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: #72D4E0;
+    transition: .5s;
+  }
+}
+.hide-translate,
+.show-translate,
+.hide-translate-rus,
+.show-translate-rus{
+  display: inline-block;
+  padding: 5px;
+  width: 80px;
+  height: 47px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+.hide-translate-bg{
+  transform: translateX(100%);
+}
+.hide-translate-bg,
+.show-translate-bg,
+.hide-translate-bg-rus,
+.show-translate-bg-rus{
+  position: absolute;
+  width: 80px;
+  height: 47px;
+  left: 0;
+  top: 0;
+  background: #eba8c4;
+  transition: .8s;
+}
+.hide-translate-text,
+.show-translate-text{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 47px;
+  width: 80px;
+  fill: #f0d4e0;
+}
+.show-translate-bg-rus{
+  transform: translateX(-100%);
+}
+.table-check:checked[type="checkbox"]::before{
+  transform: translateX(0);
+  background: #67e9ac;
+}
+.table-check-rus:checked[type="checkbox"]::before{
+  transform: translateX(25px);
+  background: #98EAF5;
+  animation: width-change 0.5s linear;
+}
+@keyframes width-change {
+  0%{
+    width: 33px;
+  }
+  80%{
+    width: 19px;
+  }
+}
+table{
+  width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-collapse: collapse;
+  padding-top: 100px;
+}
+th{
+  width: 250px;
+  padding: 10px 0;
+  background: #eba8c4;
+  text-align: center;
+}
+.word-eng{
+  line-height: 38px;
+  background: #67e9ac;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  &__mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+    background: #95e7c1;
+    transform: translateX(100%);
+    transition: .4s;
+  }
+  .button-view{
+    border: none;
+    background: #EBA8C4;
+    transform: translateX(300px);
+  }  
+}
+.word-rus{
+  background: #72d4e0;
+  line-height: 38px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  &__mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+    background: #98eaf5;
+    transition: .4s;
+    transform: translateX(-100%);
+  }
+  .button-view{
+    border: none;
+    background: #EBA8C4;
+    outline: none;
+  }
+}
+.word-eng__mask:hover,
+.word-rus__mask:hover{
+  transform: translateX(100%);
+  color: transparent;
+}
+.mask-eng{
+  transform: translateX(0);
+}
+.mask{
+  transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media";
+
+
+
+
+
