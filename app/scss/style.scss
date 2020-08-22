@@ -29,20 +29,121 @@ tr{
 td{
   position: relative;
 }
+
+// scroll---------------
+.sidebar{
+  height: 100vh;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid #fff;
+  background: #EBA8C4;
+}
+.clearfix{
+  width: 120px;
+  padding-top: 120px;
+}
+li{
+	list-style: none;
+	text-align: center;
+}
+.lesson-link{
+	text-decoration: none;
+	font-family: "Fira Sans", sans-serif;
+	color: #ffffff;
+	font-size: 30px;
+}
+
+/* content */
+.container-list {
+	width: 120px;
+	height: 412px; 
+	border-radius: 2px;
+	box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+}
+
+.container-title {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.viewport-wrapper {
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+	border: solid 1px #dedede;
+	border-width: 1px 0;
+}
+
+.viewport {
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 1px;
+	bottom: 1px;
+}
+
+.content {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.content-scroll {
+	height: 100%;
+	overflow-y: scroll;
+	right: -17px;
+}
+
+.content-list {
+	padding: 0 20px 0 17px;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.content-list li+li {
+	margin-top: 10px;
+}
+
+/* scroll bar */
+
+.scrollbar, .scroller {
+	width: 4px;
+	position: absolute;
+	top: 0;
+}
+
+.scrollbar {
+	right: 0;
+	bottom: 0;
+}
+
+.scroller {
+	left: 0;
+	border-radius: 2px;
+	background: #ffffff;
+	cursor: pointer;
+}
+// ---------------
 .table-wrapper{
   position: relative;
 }
 .button-view-wrapper-left{
   position: absolute;
-  top: 39px;
-  left: 194px;
+  top: 38px;
+  left: 441px;
 }
 .button-view{
   display: block;
   width: 41px;
   height: 41px;
-  border: 1px solid #fff;
-  border-top: none;
+  border: none;
+  border-bottom: 1px solid #fff;
   background: #EBA8C4;
   padding: 0;
   left: 0;
@@ -54,21 +155,21 @@ td{
   width: 1170px;
   margin: 0 auto;
 }
-.mask-btn{
-  position: fixed;
-  top: 118px;
-  right: 250px;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-}
 .mask-btn-rus{
   position: fixed;
   top: 118px;
-  left: 250px;
+  left: 200px;
   display: flex;
   align-items: center;
   z-index: 1;  
+}
+.mask-btn{
+  position: fixed;
+  top: 118px;
+  right: 200px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
 }
 .table-check[type="checkbox"]{
   display: inline-block;
