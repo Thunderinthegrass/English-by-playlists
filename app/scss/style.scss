@@ -49,10 +49,15 @@ li{
 	text-align: center;
 }
 .lesson-link{
+  display: inline-block;
 	text-decoration: none;
 	font-family: "Fira Sans", sans-serif;
 	color: #ffffff;
-	font-size: 30px;
+  font-size: 30px;
+}
+.lesson-active{
+  font-size: 50px;
+  font-style: italic;
 }
 
 /* content */
@@ -132,11 +137,17 @@ li{
 // ---------------
 .table-wrapper{
   position: relative;
+  padding-bottom: 38px;
 }
 .button-view-wrapper-left{
   position: absolute;
   top: 38px;
   left: 441px;
+}
+.button-view-wrapper-right{
+  position: absolute;
+  top: 38px;
+  right: 441px;
 }
 .button-view{
   display: block;
@@ -150,6 +161,22 @@ li{
   top: 0;
   cursor: pointer;
   outline: none;
+  // background-image: url(../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  &:last-child{
+    border-bottom: 1px solid #fff;
+  }
+  // &:hover{
+  //   background: #eb8bb4;
+  // }
+  // &:active{
+  //   background: #f04e94;;
+  // }
+}
+.button-view-view{
+  background-image: url(../img/close.svg);
 }
 .container{
   width: 1170px;
@@ -301,7 +328,7 @@ th{
   .button-view{
     border: none;
     background: #EBA8C4;
-    transform: translateX(300px);
+    transform: translateX(400px);
   }  
 }
 .word-rus{
@@ -321,7 +348,7 @@ th{
     transition: .4s;
     transform: translateX(-100%);
   }
-  .button-view{
+  .button-view-rus{
     border: none;
     background: #EBA8C4;
     outline: none;
@@ -335,9 +362,13 @@ th{
 .mask-eng{
   transform: translateX(0);
 }
+.mask-rus{
+  transform: translateX(0);
+}
 .mask{
   transform: translateX(0);
 }
+
 
 
 
