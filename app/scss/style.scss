@@ -348,6 +348,9 @@ th{
     transition: .4s;
     transform: translateX(-100%);
   }
+  .view{
+    transform: translateX(0);
+  }
   .button-view-rus{
     border: none;
     background: #EBA8C4;
