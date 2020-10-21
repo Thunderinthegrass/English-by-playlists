@@ -156,6 +156,7 @@ li{
   border: none;
   border-bottom: 1px solid #fff;
   background: #EBA8C4;
+  // background-image: url(../img/check.svg);
   padding: 0;
   left: 0;
   top: 0;
@@ -325,13 +326,13 @@ th{
     transform: translateX(100%);
     transition: .4s;
   }
-  .button-view{
-    border: none;
-    background: #EBA8C4;
-    transform: translateX(400px);
-    background-image: url(../img/close.svg);
+  // .button-view{
+  //   border: none;
+  //   background: #EBA8C4;
+  //   transform: translateX(400px);
+  //   background-image: url(../img/close.svg);
 
-  }  
+  // }  
 }
 .word-rus{
   background: #72d4e0;
@@ -364,6 +365,9 @@ th{
 }
 .bg-close{
   background-image: url(../img/close.svg);
+}
+.bg-check{
+  background-image: url(../img/check.svg);
 }
 .word-eng__mask:hover,
 .word-rus__mask:hover{

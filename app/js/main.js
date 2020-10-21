@@ -209,7 +209,13 @@ let wordRusMask = document.querySelectorAll('.word-rus__mask');
 for (let k = 0; k < buttonView.length; k++) {
 	buttonView[k].onclick = function () {
 		wordRusMask[k].classList.toggle('hide');
-		buttonView[k].classList.toggle('bg-close');
+		if (buttonView[k].classList.contains('bg-close')) {
+			buttonView[k].classList.toggle('bg-check');
+		}
+		else if (buttonView[k].classList.contains('bg-check')) {
+			buttonView[k].classList.remove('bg-check');
+			buttonView[k].classList.toggle('bg-close');
+		}
 	}
 }
 
@@ -226,11 +232,20 @@ tableCheckRus.onclick = function () {
 			wordRusMask[k].classList.add('hide');
 			hideTranslateBgRus.style.transform = "translateX(100%)";
 			showTranslateBgRus.style.transform = "translateX(0)";
+
+			if (buttonView[k].classList.contains('bg-close')) {
+				buttonView[k].classList.remove('bg-close');
+				buttonView[k].classList.add('bg-check');
+			}
 		}
 		else {
 			wordRusMask[k].classList.remove('hide');
 			hideTranslateBgRus.style.transform = "translateX(0)";
 			showTranslateBgRus.style.transform = "translateX(-100px)";
+			if (buttonView[k].classList.contains('bg-check')) {
+				buttonView[k].classList.remove('bg-check');
+				buttonView[k].classList.add('bg-close');
+			}
 		}
 	}
 }
