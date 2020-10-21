@@ -329,6 +329,8 @@ th{
     border: none;
     background: #EBA8C4;
     transform: translateX(400px);
+    background-image: url(../img/close.svg);
+
   }  
 }
 .word-rus{
@@ -349,6 +351,9 @@ th{
     transform: translateX(-100%);
   }
   .view{
+    transform: translateX(-100%);
+  }
+  .hide{
     transform: translateX(0);
   }
   .button-view-rus{
@@ -356,6 +361,9 @@ th{
     background: #EBA8C4;
     outline: none;
   }
+}
+.bg-close{
+  background-image: url(../img/close.svg);
 }
 .word-eng__mask:hover,
 .word-rus__mask:hover{

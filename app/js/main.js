@@ -3,27 +3,25 @@ let wordEngMask = document.querySelectorAll('.word-eng__mask');
 let showTranslate = document.querySelectorAll('.show-translate');
 let showTranslateRus = document.querySelectorAll('.show-translate-rus');
 let hideTranslateBg = document.querySelector('.hide-translate-bg');
-let hideTranslateBgRus = document.querySelector('.hide-translate-bg-rus');
 let showTranslateBg = document.querySelector('.show-translate-bg');
-let showTranslateBgRus = document.querySelector('.show-translate-bg-rus');
 
 
-// tableCheck.onclick = function () {
-// 	if (tableCheck.checked) {
-// 		wordEngMask.forEach(element => {
-// 			element.classList.toggle('mask-eng');
-// 		});
-// 		hideTranslateBg.style.transform = "translateX(0)";
-// 		showTranslateBg.style.transform = "translateX(-100%)";
-// 	}
-// 	else {
-// 		wordEngMask.forEach(element => {
-// 			element.classList.remove('mask-eng');
-// 		});
-// 		hideTranslateBg.style.transform = "translateX(100%)";
-// 		showTranslateBg.style.transform = "translateX(0)";
-// 	}
-// }
+tableCheck.onclick = function () {
+	if (tableCheck.checked) {
+	// 	wordEngMask.forEach(element => {
+	// 		element.classList.toggle('mask-eng');
+	// 	});
+		hideTranslateBg.style.transform = "translateX(0)";
+		showTranslateBg.style.transform = "translateX(-100%)";
+	}
+	else {
+		// wordEngMask.forEach(element => {
+		// 	element.classList.remove('mask-eng');
+		// });
+		hideTranslateBg.style.transform = "translateX(100%)";
+		showTranslateBg.style.transform = "translateX(0)";
+	}
+}
 
 // tableCheckRus.onclick = function () {
 // 	if (tableCheckRus.checked) {
@@ -43,165 +41,165 @@ let showTranslateBgRus = document.querySelector('.show-translate-bg-rus');
 // }
 
 
-	// Прокрутка номеров уроков
-	; (function () {
-		'use strict';
+// Прокрутка номеров уроков
+; (function () {
+	'use strict';
 
-		function ScrollBox(container, nameEvent) {
-			// имя события прокрутки
-			this.nameEvent = nameEvent;
-			// родительский элемент в котором находится контент и скроллбар
-			this.viewport = container.querySelector('.viewport');
-			// элемент с контентом
-			this.content = this.viewport.querySelector('.content');
-			// высоты полученных элементов
-			this.viewportHeight = this.viewport.offsetHeight;
-			this.contentHeight = this.content.scrollHeight;
-			// возможная максимальная прокрутка контента
-			this.max = this.viewport.clientHeight - this.contentHeight;
-			// соотношение между высотами вьюпорта и контента
-			this.ratio = this.viewportHeight / this.contentHeight;
-			// минимальная высота ползунка скроллбара
-			this.scrollerHeightMin = 25;
-			// шаг прокручивания контента при наступлении события 'wheel'
-			// чем меньше шаг, тем медленнее и плавнее будет прокручиваться контент
-			this.step = 20;
-			// флаг нажатия на левую кнопку мыши
-			this.pressed = false;
-		}
+	function ScrollBox(container, nameEvent) {
+		// имя события прокрутки
+		this.nameEvent = nameEvent;
+		// родительский элемент в котором находится контент и скроллбар
+		this.viewport = container.querySelector('.viewport');
+		// элемент с контентом
+		this.content = this.viewport.querySelector('.content');
+		// высоты полученных элементов
+		this.viewportHeight = this.viewport.offsetHeight;
+		this.contentHeight = this.content.scrollHeight;
+		// возможная максимальная прокрутка контента
+		this.max = this.viewport.clientHeight - this.contentHeight;
+		// соотношение между высотами вьюпорта и контента
+		this.ratio = this.viewportHeight / this.contentHeight;
+		// минимальная высота ползунка скроллбара
+		this.scrollerHeightMin = 25;
+		// шаг прокручивания контента при наступлении события 'wheel'
+		// чем меньше шаг, тем медленнее и плавнее будет прокручиваться контент
+		this.step = 20;
+		// флаг нажатия на левую кнопку мыши
+		this.pressed = false;
+	}
 
-		// для сокращения записи, создадим переменную, которая будет ссылаться
-		// на прототип 'ScrollBox'
-		const fn = ScrollBox.prototype;
+	// для сокращения записи, создадим переменную, которая будет ссылаться
+	// на прототип 'ScrollBox'
+	const fn = ScrollBox.prototype;
 
-		fn.init = function () {
-			// если высота контента меньше или равна высоте вьюпорта,
-			// выходим из функции
-			if (this.viewportHeight >= this.contentHeight) return;
-			// формируем полосу прокрутки и полунок
-			this.createScrollbar();
-			// устанавливаем обработчики событий
-			this.registerEventsHandler();
-		};
+	fn.init = function () {
+		// если высота контента меньше или равна высоте вьюпорта,
+		// выходим из функции
+		if (this.viewportHeight >= this.contentHeight) return;
+		// формируем полосу прокрутки и полунок
+		this.createScrollbar();
+		// устанавливаем обработчики событий
+		this.registerEventsHandler();
+	};
 
-		fn.createScrollbar = function () {
-			// создаём новые DOM-элементы DIV из которых будет
-			// сформирован скроллбар
-			let scrollbar = document.createElement('div'),
-				scroller = document.createElement('div');
+	fn.createScrollbar = function () {
+		// создаём новые DOM-элементы DIV из которых будет
+		// сформирован скроллбар
+		let scrollbar = document.createElement('div'),
+			scroller = document.createElement('div');
 
-			// присваиваем созданным элементам соответствующие классы
-			scrollbar.className = 'scrollbar';
-			scroller.className = 'scroller';
+		// присваиваем созданным элементам соответствующие классы
+		scrollbar.className = 'scrollbar';
+		scroller.className = 'scroller';
 
-			// вставляем созданные элементы в document
-			scrollbar.appendChild(scroller);
-			this.viewport.appendChild(scrollbar);
+		// вставляем созданные элементы в document
+		scrollbar.appendChild(scroller);
+		this.viewport.appendChild(scrollbar);
 
-			// получаем DOM-объект ползунка полосы прокрутки, вычисляем и
-			// устанавливаем его высоту
-			this.scroller = this.viewport.querySelector('.scroller');
-			this.scrollerHeight = parseInt(this.ratio * this.viewportHeight);
-			this.scrollerHeight = (this.scrollerHeight < this.scrollerHeightMin) ? this.scrollerHeightMin : this.scrollerHeight;
-			this.scroller.style.height = this.scrollerHeight + 'px';
-			// вычисляем максимально возможное смещение ползунка от верхней границы вьюпорта
-			// это смещение зависит от высоты вьюпорта и высоты самого ползунка
-			this.scrollerMaxOffset = this.viewportHeight - this.scroller.offsetHeight;
-		};
+		// получаем DOM-объект ползунка полосы прокрутки, вычисляем и
+		// устанавливаем его высоту
+		this.scroller = this.viewport.querySelector('.scroller');
+		this.scrollerHeight = parseInt(this.ratio * this.viewportHeight);
+		this.scrollerHeight = (this.scrollerHeight < this.scrollerHeightMin) ? this.scrollerHeightMin : this.scrollerHeight;
+		this.scroller.style.height = this.scrollerHeight + 'px';
+		// вычисляем максимально возможное смещение ползунка от верхней границы вьюпорта
+		// это смещение зависит от высоты вьюпорта и высоты самого ползунка
+		this.scrollerMaxOffset = this.viewportHeight - this.scroller.offsetHeight;
+	};
 
-		// регистрация обработчиков событий
-		fn.registerEventsHandler = function (e) {
-			// вращение колёсика мыши
-			if (this.nameEvent === 'wheel') {
-				this.viewport.addEventListener('wheel', this.scroll.bind(this));
-			} else {
-				this.content.addEventListener('scroll', () => {
-					this.scroller.style.top = (this.content.scrollTop * this.ratio) + 'px';
-				});
-			}
-
-			// нажатие на левую кнопку мыши
-			this.scroller.addEventListener('mousedown', e => {
-				// координата по оси Y нажатия левой кнопки мыши
-				this.start = e.clientY;
-				// устанавливаем флаг, информирующий о нажатии левой кнопки мыши
-				this.pressed = true;
+	// регистрация обработчиков событий
+	fn.registerEventsHandler = function (e) {
+		// вращение колёсика мыши
+		if (this.nameEvent === 'wheel') {
+			this.viewport.addEventListener('wheel', this.scroll.bind(this));
+		} else {
+			this.content.addEventListener('scroll', () => {
+				this.scroller.style.top = (this.content.scrollTop * this.ratio) + 'px';
 			});
-
-			// перемещение мыши
-			document.addEventListener('mousemove', this.drop.bind(this));
-
-			// отпускание левой кнопки мыши
-			document.addEventListener('mouseup', () => this.pressed = false);
-		};
-
-		fn.scroll = function (e) {
-			e.preventDefault();
-			// направление вращения колёсика мыши
-			let dir = -Math.sign(e.deltaY);
-			// шаг прокручивания контента, в зависимости от прокручивания
-			// колёсика мыши
-			let step = (Math.abs(e.deltaY) >= 3) ? this.step * dir : 0;
-
-			// управляем позиционированием контента
-			this.content.style.top = (this.content.offsetTop + step) + 'px';
-			// ограничиваем прокручивание контента вверх и вниз
-			if (this.content.offsetTop > 0) this.content.style.top = '0px';
-			if (this.content.offsetTop < this.max) this.content.style.top = this.max + 'px';
-
-			// перемещаем ползунок пропорционально прокручиванию контента
-			this.scroller.style.top = (-this.content.offsetTop * this.ratio) + 'px';
-		};
-
-		fn.drop = function (e) {
-			e.preventDefault();
-			// если кнопка мыши не нажата, прекращаем работу функции
-			if (this.pressed === false) return;
-
-			// величина перемещения мыши
-			let shiftScroller = this.start - e.clientY;
-			// изменяем положение бегунка на величину перемещения мыши
-			this.scroller.style.top = (this.scroller.offsetTop - shiftScroller) + 'px';
-
-			// ограничиваем перемещение ползунка по верхней границе вьюпорта
-			if (this.scroller.offsetTop <= 0) this.scroller.style.top = '0px';
-			// ограничиваем перемещение ползунка по нижней границе вьюпорта
-			// сумма высоты ползунка и его текущего отступа от верхней границы вьюпорта
-			let totalHeight = this.scroller.offsetHeight + this.scroller.offsetTop;
-			if (totalHeight >= this.viewportHeight) this.scroller.style.top = this.scrollerMaxOffset + 'px';
-
-			// расстояние, на которую должен переместиться контент
-			// это расстояние пропорционально смещению ползунка
-			let shiftContent = this.scroller.offsetTop / this.ratio;
-			// прокручиваем контент по событию 'wheel'
-			if (this.nameEvent === 'wheel') {
-				// прокручиваем контент на величину пропорциональную перемещению ползунка,
-				// она имеет обратный знак, т.к. ползунок и контент прокручиваются
-				// в противоположных направлениях
-				this.content.style.top = -shiftContent + 'px';
-				// прокручиваем контент по событию 'scroll'
-			} else {
-				this.content.scrollTo(0, shiftContent);
-			}
-			// устанавливаем координату Y начала движения мыши равной текущей координате Y
-			this.start = e.clientY;
-		};
-
-		// выбираем все блоки на странице, в которых может понадобиться
-		// прокрутка контента
-		const containers = document.querySelectorAll('[data-control]');
-		// перебираем полученную коллекцию элементов
-		for (const container of containers) {
-			// имя события, используемого для прокручивания контента
-			let nameEvent = container.getAttribute('data-control');
-			// с помощью конструктора 'ScrollBox' создаём экземпляр объекта,
-			// в котором будем прокручивать контент
-			let scrollbox = new ScrollBox(container, nameEvent);
-			// создание скроллбара, исходя из полученных в конструкторе высот
-			// контента и вьюпорта текущего блока, регистрация обработчиков событий
-			scrollbox.init();
 		}
-	})();
+
+		// нажатие на левую кнопку мыши
+		this.scroller.addEventListener('mousedown', e => {
+			// координата по оси Y нажатия левой кнопки мыши
+			this.start = e.clientY;
+			// устанавливаем флаг, информирующий о нажатии левой кнопки мыши
+			this.pressed = true;
+		});
+
+		// перемещение мыши
+		document.addEventListener('mousemove', this.drop.bind(this));
+
+		// отпускание левой кнопки мыши
+		document.addEventListener('mouseup', () => this.pressed = false);
+	};
+
+	fn.scroll = function (e) {
+		e.preventDefault();
+		// направление вращения колёсика мыши
+		let dir = -Math.sign(e.deltaY);
+		// шаг прокручивания контента, в зависимости от прокручивания
+		// колёсика мыши
+		let step = (Math.abs(e.deltaY) >= 3) ? this.step * dir : 0;
+
+		// управляем позиционированием контента
+		this.content.style.top = (this.content.offsetTop + step) + 'px';
+		// ограничиваем прокручивание контента вверх и вниз
+		if (this.content.offsetTop > 0) this.content.style.top = '0px';
+		if (this.content.offsetTop < this.max) this.content.style.top = this.max + 'px';
+
+		// перемещаем ползунок пропорционально прокручиванию контента
+		this.scroller.style.top = (-this.content.offsetTop * this.ratio) + 'px';
+	};
+
+	fn.drop = function (e) {
+		e.preventDefault();
+		// если кнопка мыши не нажата, прекращаем работу функции
+		if (this.pressed === false) return;
+
+		// величина перемещения мыши
+		let shiftScroller = this.start - e.clientY;
+		// изменяем положение бегунка на величину перемещения мыши
+		this.scroller.style.top = (this.scroller.offsetTop - shiftScroller) + 'px';
+
+		// ограничиваем перемещение ползунка по верхней границе вьюпорта
+		if (this.scroller.offsetTop <= 0) this.scroller.style.top = '0px';
+		// ограничиваем перемещение ползунка по нижней границе вьюпорта
+		// сумма высоты ползунка и его текущего отступа от верхней границы вьюпорта
+		let totalHeight = this.scroller.offsetHeight + this.scroller.offsetTop;
+		if (totalHeight >= this.viewportHeight) this.scroller.style.top = this.scrollerMaxOffset + 'px';
+
+		// расстояние, на которую должен переместиться контент
+		// это расстояние пропорционально смещению ползунка
+		let shiftContent = this.scroller.offsetTop / this.ratio;
+		// прокручиваем контент по событию 'wheel'
+		if (this.nameEvent === 'wheel') {
+			// прокручиваем контент на величину пропорциональную перемещению ползунка,
+			// она имеет обратный знак, т.к. ползунок и контент прокручиваются
+			// в противоположных направлениях
+			this.content.style.top = -shiftContent + 'px';
+			// прокручиваем контент по событию 'scroll'
+		} else {
+			this.content.scrollTo(0, shiftContent);
+		}
+		// устанавливаем координату Y начала движения мыши равной текущей координате Y
+		this.start = e.clientY;
+	};
+
+	// выбираем все блоки на странице, в которых может понадобиться
+	// прокрутка контента
+	const containers = document.querySelectorAll('[data-control]');
+	// перебираем полученную коллекцию элементов
+	for (const container of containers) {
+		// имя события, используемого для прокручивания контента
+		let nameEvent = container.getAttribute('data-control');
+		// с помощью конструктора 'ScrollBox' создаём экземпляр объекта,
+		// в котором будем прокручивать контент
+		let scrollbox = new ScrollBox(container, nameEvent);
+		// создание скроллбара, исходя из полученных в конструкторе высот
+		// контента и вьюпорта текущего блока, регистрация обработчиков событий
+		scrollbox.init();
+	}
+})();
 // --------------------------
 
 // --------кнопки показать-скрыть русские слова-------------
@@ -209,189 +207,33 @@ let buttonView = document.querySelectorAll('.button-view');
 let wordRusMask = document.querySelectorAll('.word-rus__mask');
 
 for (let k = 0; k < buttonView.length; k++) {
-	buttonView[k].onclick = function() {
-		wordRusMask[k].classList.toggle('view');
+	buttonView[k].onclick = function () {
+		wordRusMask[k].classList.toggle('hide');
+		buttonView[k].classList.toggle('bg-close');
 	}
 }
 
 
 // table-check-button-rus-----------------
 let tableCheckRus = document.querySelector('.table-check-rus');
+let showTranslateBgRus = document.querySelector('.show-translate-bg-rus');
+let hideTranslateBgRus = document.querySelector('.hide-translate-bg-rus');
 
-tableCheckRus.onclick = function() {
+
+tableCheckRus.onclick = function () {
 	for (let k = 0; k < wordRusMask.length; k++) {
-		if (wordRusMask[k].classList.contains('view')) {
-			wordRusMask[k].classList.add('view');
+		if (tableCheckRus.checked){
+			wordRusMask[k].classList.add('hide');
+			hideTranslateBgRus.style.transform = "translateX(100%)";
+			showTranslateBgRus.style.transform = "translateX(0)";
 		}
-		else{
-			wordRusMask[k].classList.add('view');
+		else {
+			wordRusMask[k].classList.remove('hide');
+			hideTranslateBgRus.style.transform = "translateX(0)";
+			showTranslateBgRus.style.transform = "translateX(-100px)";
 		}
 	}
 }
-
-// buttonView.onclick = function () {
-// 	let wordRusMask = document.querySelector('.word-rus__mask');
-	
-// 		wordRusMask.classList.toggle('view');
-	
-// }
-
-
-// let buttonView1 = document.querySelector('.button-view-1');
-
-
-// let wordRusMask = document.querySelector('.word-rus__mask-1');
-
-
-
-// buttonView1.onclick = function () {
-// 	wordRusMask1.classList.toggle('mask');
-// 	buttonView1.classList.toggle('button-view-view');
-// 	// let rus = document.querySelector('#rus');
-// 	// let contains = rus.classList.contains('mask');
-// 	// console.log(contains);
-// 	// if(contains = false) {
-// 	// 	rus.classList.toggle('button-view-view');
-// 	// }
-// }
-
-// let elem = document.querySelector('#elem');
-
-// let contains = elem.classList.contains('ggg');
-// console.log(contains);
-
-
-
-// buttonView2.onclick = function () {
-// 	wordRusMask2.classList.toggle('mask');
-// }
-
-// buttonView3.onclick = function () {
-// 	wordRusMask3.classList.toggle('mask');
-// }
-
-// buttonView4.onclick = function () {
-// 	wordRusMask4.classList.toggle('mask');
-// }
-
-// buttonView5.onclick = function () {
-// 	wordRusMask5.classList.toggle('mask');
-// }
-
-// buttonView6.onclick = function () {
-// 	wordRusMask6.classList.toggle('mask');
-// }
-
-// buttonView7.onclick = function () {
-// 	wordRusMask7.classList.toggle('mask');
-// }
-
-// buttonView8.onclick = function () {
-// 	wordRusMask8.classList.toggle('mask');
-// }
-
-// buttonView9.onclick = function () {
-// 	wordRusMask9.classList.toggle('mask');
-// }
-
-// buttonView10.onclick = function () {
-// 	wordRusMask10.classList.toggle('mask');
-// }
-
-// buttonView11.onclick = function () {
-// 	wordRusMask11.classList.toggle('mask');
-// }
-
-// buttonView12.onclick = function () {
-// 	wordRusMask12.classList.toggle('mask');
-// }
-
-// buttonView13.onclick = function () {
-// 	wordRusMask13.classList.toggle('mask');
-// }
-
-// buttonView14.onclick = function () {
-// 	wordRusMask14.classList.toggle('mask');
-// }
-
-// buttonView15.onclick = function () {
-// 	wordRusMask15.classList.toggle('mask');
-// }
-
-// buttonView16.onclick = function () {
-// 	wordRusMask16.classList.toggle('mask');
-// }
-
-// buttonView17.onclick = function () {
-// 	wordRusMask17.classList.toggle('mask');
-// }
-
-// buttonView18.onclick = function () {
-// 	wordRusMask18.classList.toggle('mask');
-// }
-
-// buttonView19.onclick = function () {
-// 	wordRusMask19.classList.toggle('mask');
-// }
-
-// buttonView20.onclick = function () {
-// 	wordRusMask20.classList.toggle('mask');
-// }
-
-// buttonView21.onclick = function () {
-// 	wordRusMask21.classList.toggle('mask');
-// }
-
-// buttonView22.onclick = function () {
-// 	wordRusMask22.classList.toggle('mask');
-// }
-// buttonView23.onclick = function () {
-// 	wordRusMask23.classList.toggle('mask');
-// }
-
-// buttonView24.onclick = function () {
-// 	wordRusMask24.classList.toggle('mask');
-// }
-
-// buttonView25.onclick = function () {
-// 	wordRusMask25.classList.toggle('mask');
-// }
-
-// buttonView26.onclick = function () {
-// 	wordRusMask26.classList.toggle('mask');
-// }
-
-// buttonView27.onclick = function () {
-// 	wordRusMask27.classList.toggle('mask');
-// }
-
-// buttonView28.onclick = function () {
-// 	wordRusMask28.classList.toggle('mask');
-// }
-
-// buttonView29.onclick = function () {
-// 	wordRusMask29.classList.toggle('mask');
-// }
-
-// buttonView30.onclick = function () {
-// 	wordRusMask30.classList.toggle('mask');
-// }
-
-// buttonView31.onclick = function () {
-// 	wordRusMask31.classList.toggle('mask');
-// }
-
-// buttonView32.onclick = function () {
-// 	wordRusMask32.classList.toggle('mask');
-// }
-
-// buttonView33.onclick = function () {
-// 	wordRusMask33.classList.toggle('mask');
-// }
-
-// buttonView34.onclick = function () {
-// 	wordRusMask34.classList.toggle('mask');
-// }
 
 
 // кнопки показать-скрыть английские слова------------------------------------------
