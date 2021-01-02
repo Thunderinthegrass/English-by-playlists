@@ -199,7 +199,7 @@ li{
   align-items: center;
   z-index: 1;
 }
-.table-check[type="checkbox"]{
+.table-check-eng[type="checkbox"]{
   display: inline-block;
   width: 50px;
   height: 25px;
@@ -258,7 +258,9 @@ li{
 .hide-translate-bg,
 .show-translate-bg,
 .hide-translate-bg-rus,
-.show-translate-bg-rus{
+.show-translate-bg-rus,
+.hide-translate-bg-eng,
+.show-translate-bg-eng{
   position: absolute;
   width: 80px;
   height: 47px;
@@ -279,7 +281,13 @@ li{
 .show-translate-bg-rus{
   transform: translateX(-100%);
 }
-.table-check:checked[type="checkbox"]::before{
+.show-translate-bg-eng{
+  transform: translateX(0px);
+}
+.hide-translate-bg-eng{
+  transform: translateX(100%);
+}
+.table-check-eng:checked[type="checkbox"]::before{
   transform: translateX(0);
   background: #67e9ac;
 }
