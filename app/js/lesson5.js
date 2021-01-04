@@ -1,0 +1,73 @@
+const wordRusText = document.querySelectorAll('.word__rus-text');
+let lesson4__1Rus = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+
+const wordEngText = document.querySelectorAll('.word__eng-text');
+let lesson4__1Eng = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+
+
+for (let i = 0; i < wordRusText.length; i++) {
+  wordRusText[i].textContent = lesson4__1Rus[i];
+  wordEngText[i].textContent = lesson4__1Eng[i];
+}

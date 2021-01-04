@@ -1,0 +1,73 @@
+const wordRusText = document.querySelectorAll('.word__rus-text');
+let lesson6Rus = [
+  "Я хочу улучшить свою грамматику",
+  "Я хочу пойти туда ещё один раз",
+  "Она хочет жить в другом месте",
+  "Она хочет сделать это",
+  "Я хочу знать это",
+  "Я хочу говорить по-английски без ошибок",
+  "Она хочет увидеть тебя прямо сейчас",
+  "Я хочу этот компьютер",
+  "Я хочу это платье",
+  "Я хочу хорошую машину",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+
+const wordEngText = document.querySelectorAll('.word__eng-text');
+let lesson6Eng = [
+  "I want to improve my grammar",
+  "I want to go there one more time",
+  "She wants to leave in another place",
+  "She wants to do it",
+  "I want to know it",
+  "I want to speak English without mistakes",
+  "She wants to see you right now",
+  "I want this computer",
+  "I want this dress",
+  "I want a good car",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+];
+
+
+for (let i = 0; i < wordRusText.length; i++) {
+  wordRusText[i].textContent = lesson6Rus[i];
+  wordEngText[i].textContent = lesson6Eng[i];
+}
