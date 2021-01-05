@@ -373,9 +373,13 @@ th{
 }
 .bg-close{
   background-image: url(../img/close.svg);
+  // background-image: url(../img/eye-blocked.svg);
+  background-size: 25px;
 }
 .bg-check{
   background-image: url(../img/check.svg);
+  // background-image: url(../img/eye.svg);
+  background-size: 25px;
 }
 .word-eng__mask:hover,
 .word-rus__mask:hover{
