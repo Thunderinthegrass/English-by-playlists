@@ -1,92 +1,7 @@
-// let wordsList = ['привет', 'калькулятор', 'лампа', 'квадрат', 'круг',];
-
-// document.querySelector('.btn').onclick = () => {
-//     let inp = document.querySelectorAll('.inp');
-
-//     for (let k = 0; k < wordsList.length; k++) {
-//         let val = inp[k].value;
-//         val = val.toLowerCase();
-//         val = val.trim();
-
-//         if (val == wordsList[k]) {
-//             inp[k].classList.remove('mistake');
-//             inp[k].classList.add('correctly');
-//         }
-//         else {
-//             inp[k].classList.remove('correctly');
-//             inp[k].classList.add('mistake');
-//         }
-//     }
-// }
-
-
 const wordRusText = document.querySelectorAll('.word__rus-text');
 const wordRus = document.querySelectorAll('.word-rus');
 
 const wordEngMask5__1 = document.querySelectorAll('.word-eng__mask');
-// let lesson5__1EngMask = [
-//   "i want it",
-//   "he has dollars",
-//   "i understand you",
-//   "i want more practice",
-//   "she sees this mistake",
-//   "you know it",
-//   "she really remembers it",
-//   "this company has money",
-//   "i see this mistake",
-//   "she remembers it",
-//   "she speaks english very well",
-//   "my sister studies there",
-//   "i see these mistakes",
-//   "he helps me",
-//   "i have a brother",
-//   "she has a car",
-//   "my sister leaves in this place",
-//   "it help me",
-//   "your lessons really help",
-//   "you speak english very well",
-//   "we want it",
-//   "my friend thinks the same",
-//   "he misses you",
-//   "he has a dog",
-//   "she reads english books",
-//   "we leave here",
-//   "it looks strange",
-//   "he has a house",
-//   "i study there",
-//   "i see its success",
-//   "i study here",
-//   "he leaves in this house",
-//   "they know ewerything",
-//   "i know it",
-//   "i have a brother",
-//   "she tryes to learn English",
-//   "we leave in this country",
-//   "we leave in russia",
-//   "you help me",
-//   "i leave in this city",
-//   "they sometimes play computer games",
-//   "i understand that person",
-//   "he tries to help me",
-//   "i go to work",
-//   "i have a car",
-//   "this offer seems really strange",
-//   "he teaches english",
-//   "we often do it",
-//   "i understand you very well",
-//   "the leaves in that city",
-//   "he knows it",
-//   "she has a cat",
-//   "this offer looks interesting",
-//   "they go to school",
-//   "he reads in english",
-//   "we think so",
-//   "she feels happy",
-//   "i see it",
-//   "i know it very well",
-//   "i have an idea",
-//   "she tryes to understand it",
-// ];
 
 let lesson5__1Rus = [
   "Я хочу это",
@@ -230,11 +145,6 @@ lesson5__1Eng.forEach(elem => {
 
 for (let i = 0; i < wordRusText.length; i++) {
   wordRusText[i].textContent = lesson5__1Rus[i];
-  // let z = lesson5__1EngMask[i][0];
-  // z = z.toUpperCase();
-  // lesson5__1EngMask[i][0] = z;
-
-  
   wordEngMask5__1[i].textContent = lesson5__1EngMask[i];
 
 //если много букв в строке, уменьшает line-height

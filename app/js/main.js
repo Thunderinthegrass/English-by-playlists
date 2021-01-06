@@ -35,6 +35,8 @@ tableCheckEng.onclick = function () {
 
 
 // Прокрутка номеров уроков
+function scrBar() {
+
 ; (function () {
 	'use strict';
 
@@ -193,6 +195,9 @@ tableCheckEng.onclick = function () {
 		scrollbox.init();
 	}
 })();
+}
+
+scrBar();
 // --------------------------
 
 // --------кнопки показать-скрыть русские слова-------------
