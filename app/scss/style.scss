@@ -140,15 +140,20 @@ li {
   position: relative;
   padding-bottom: 38px;
 }
+.table-inner{
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
 .button-view-wrapper-left {
   position: absolute;
   top: 38px;
-  left: 441px;
+  left: -42px;
 }
 .button-view-wrapper-right {
   position: absolute;
   top: 38px;
-  right: 441px;
+  right: -42px;
 }
 .button-view {
   display: block;

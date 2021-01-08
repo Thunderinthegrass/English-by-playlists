@@ -118,7 +118,7 @@ let lesson5__1Eng = [
   "he teaches english",
   "we often do it",
   "i understand you very well",
-  "the leaves in that city",
+  "she leaves in that city",
   "he knows it",
   "she has a cat",
   "this offer looks interesting",
