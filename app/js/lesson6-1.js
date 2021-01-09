@@ -45,7 +45,7 @@ const wordEngText = document.querySelectorAll('.word__eng-text');
 let lesson6Eng = [
   "I want to improve my grammar",
   "I want to go there one more time",
-  "She wants to leave in another place",
+  "She wants to live in another place",
   "She wants to do it",
   "I want to know it",
   "I want to speak English without mistakes",
@@ -68,7 +68,7 @@ let lesson6Eng = [
   "I want to speak English correctly",
   "My parents want to live in another place",
   "I have to improve my English",
-  "I want to go to another plsace",
+  "I want to go to another place",
   "I want a new flat (apartment)",
   "I have to buy a new flat (apartment)",
   "My friend wants to live abroad",
@@ -86,6 +86,13 @@ let lesson6Eng = [
 for (let i = 0; i < wordRusText.length; i++) {
   wordRusText[i].textContent = lesson6Rus[i];
   wordEngText[i].textContent = lesson6Eng[i];
+//убирает строки с классом "new-word-hide", вместо них отрисовывается то, что в html
+  if (wordRusText[i].classList.contains('new-word-hide')) {
+    wordRusText[i].textContent = '';
+  }
+  if (wordEngText[i].classList.contains('new-word-hide')) {
+    wordEngText[i].textContent = '';
+  }
 
 if(lesson6Rus[i].length > 43) {
   // console.log(lesson6Rus[i].length);
@@ -94,4 +101,13 @@ if(lesson6Rus[i].length > 43) {
   wordRus[i].classList.remove('word-rus');
   wordRus[i].classList.add('lh-min');
 }
+}
+
+const newWordsBtn = document.querySelector('.new-words-btn').onclick = viewNewWords;
+
+function viewNewWords() {
+  let newWord = document.querySelectorAll('.new-word');
+  for (let i = 0; i < newWord.length; i++) {
+    newWord[i].classList.add('new-word-active');
+  }
 }

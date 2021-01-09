@@ -10,7 +10,13 @@
 
 <body>
   <header class="header">
-
+    <nav class="header__nav">
+      <li class="header__nav-item">Оранжевый плейлист</li>
+      <li class="header__nav-item"></li>
+      <li class="header__nav-item"></li>
+      <li class="header__nav-item"></li>
+      <li class="header__nav-item"></li>
+    </nav>
   </header>
   <div class="sidebar">
     <div class="clearfix">
@@ -23,15 +29,14 @@
                 <li><a href="../index.html" class="lesson-link">1</a></li>
                 <li><a href="lesson2.html" class="lesson-link">2</a></li>
                 <li><a href="lesson3.html" class="lesson-link">3</a></li>
-                <li><a href="lesson3-1.html" class="lesson-link lesson-active">3.1</a></li>
+                <li><a href="lesson3-1.html" class="lesson-link">3.1</a></li>
                 <li><a href="lesson4.html" class="lesson-link">4</a></li>
                 <li><a href="lesson4-1.html" class="lesson-link">4.1</a></li>
                 <li><a href="lesson5.html" class="lesson-link">5</a></li>
                 <li><a href="lesson5-1.html" class="lesson-link">5.1</a></li>
                 <li><a href="lesson5-2.html" class="lesson-link">5.2</a></li>
-                <li><a href="lesson5-3.html" class="lesson-link">5.3</a></li>
                 <li><a href="lesson6.html" class="lesson-link">6</a></li>
-                <li><a href="lesson6-1.html" class="lesson-link">6.1</a></li>
+                <li><a href="lesson6-1.html" class="lesson-link lesson-active">6.1</a></li>
                 <li><a href="lesson7.html" class="lesson-link">7</a></li>
                 <li><a href="lesson8.html" class="lesson-link">8</a></li>
                 <li><a href="lesson9.html" class="lesson-link">9</a></li>
@@ -87,7 +92,7 @@
   <div class="container">
     <section class="content">
       <h1>Английский язык по плейлистам</h1>
-      <h2>Урок 3.1. Практика</h2>
+      <h2>Урок 6.1 Практика</h2>
       <div class="mask-btn">
         <div class="hide-translate">
           <div class="hide-translate-bg-eng">
@@ -139,11 +144,21 @@
         </div>
       </div>
       <!-- <div class="additional-info">
-        He, She, It + verb + s
-      </div> -->
+  He, She, It + verb + s
+</div> -->
       <div class="table-wrapper">
         <div class="table-inner">
+          <button class="new-words-btn">
+            Новые слова
+          </button>
           <div class="button-view-wrapper-left">
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
+            <button class="button-view bg-close"></button>
             <button class="button-view bg-close"></button>
             <button class="button-view bg-close"></button>
             <button class="button-view bg-close"></button>
@@ -206,6 +221,13 @@
             <button class="button-view button-view-eng bg-close"></button>
             <button class="button-view button-view-eng bg-close"></button>
             <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
+            <button class="button-view button-view-eng bg-close"></button>
           </div>
           <table>
             <tr>
@@ -213,42 +235,42 @@
               <th>Английская фраза</th>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу <span class="new-word">улучшить</span> свою <span class="new-word">грамматику</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I want to <span class="new-word">improve</span> my <span class="new-word">grammar</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-1">
                   Показать перевод
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу пойти туда <span class="new-word">ещё один раз</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I want to go there <span class="new-word">one more time</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-2">
                   Показать перевод
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Она хочет жить в <span class="new-word">другом</span> месте
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">She wants to live in <span class="new-word">another</span> place
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-3">
                   Показать перевод
                 </div>
@@ -297,14 +319,14 @@
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Она хочет увидеть тебя <span class="new-word">прямо сейчас</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
               <td class="word-eng">
-                <div class="word__eng-text"></div>
+                <div class="word__eng-text new-word-hide"></div>She wants to see you <span class="new-word">right now</span>
                 <div class="word-eng__mask word-eng__mask-7">
                   Показать перевод
                 </div>
@@ -325,14 +347,14 @@
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу это <span class="new-word">платье</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I want this this <span class="new-word">dress</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-9">
                   Показать перевод
                 </div>
@@ -367,14 +389,14 @@
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу поехать туда <span class="new-word">снова</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I have to go there <span class="new-word">again</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-12">
                   Показать перевод
                 </div>
@@ -395,14 +417,14 @@
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу говорить по-английски <span class="new-word">свободно</span> и <span class="new-word">правильно</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I want to speak English <span class="new-word">fluently</span> and <span class="new-word">correctly</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-14">
                   Показать перевод
                 </div>
@@ -465,14 +487,14 @@
               </td>
             </tr>
             <tr>
-              <td class="word-rus">
-                <div class="word__rus-text"></div>
+              <td class="word-rus">Я хочу знать английский <span class="new-word">лучше</span>
+                <div class="word__rus-text new-word-hide"></div>
                 <div class="word-rus__mask">
                   Фраза на русском языке
                 </div>
               </td>
-              <td class="word-eng">
-                <div class="word__eng-text"></div>
+              <td class="word-eng">I want yo know English <span class="new-word">better</span>
+                <div class="word__eng-text new-word-hide"></div>
                 <div class="word-eng__mask word-eng__mask-19">
                   Показать перевод
                 </div>
@@ -632,6 +654,104 @@
                 </div>
               </td>
             </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="word-rus">
+                <div class="word__rus-text"></div>
+                <div class="word-rus__mask">
+                  Фраза на русском языке
+                </div>
+              </td>
+              <td class="word-eng">
+                <div class="word__eng-text"></div>
+                <div class="word-eng__mask word-eng__mask-30">
+                  Показать перевод
+                </div>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
@@ -642,7 +762,7 @@
 
 
   <script src="../js/main.js"></script>
-  <script src="../js/lesson3-1.js"></script>
+  <script src="../js/lesson6-1.js"></script>
 </body>
 
 </html>

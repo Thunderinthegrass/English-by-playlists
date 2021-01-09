@@ -4,6 +4,7 @@
 @import "libs";
 @import "fonts";
 @import "global";
+@import "header";
 
 *,
 ::before,
@@ -29,7 +30,13 @@ tr {
 td {
   position: relative;
 }
-
+//video--------------------
+.video-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0 50px;
+}
 // scroll---------------
 .sidebar {
   height: 100vh;
@@ -145,6 +152,23 @@ li {
   margin: 0 auto;
   position: relative;
 }
+.new-words-btn{
+  background: #EBA8C4;
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  position: fixed;
+  top: 177px;
+  right: 250px;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  border-radius: 2px;
+  padding: 5px;
+  &:focus{
+    outline: none;
+  }
+}
 .button-view-wrapper-left {
   position: absolute;
   top: 38px;
@@ -154,6 +178,10 @@ li {
   position: absolute;
   top: 38px;
   right: -42px;
+}
+.new-word-active{
+  color: #eba8c4;
+  font-weight: bold;
 }
 .button-view {
   display: block;
@@ -191,7 +219,7 @@ li {
 }
 .mask-btn-rus {
   position: fixed;
-  top: 118px;
+  top: 220px;
   left: 200px;
   display: flex;
   align-items: center;
@@ -199,7 +227,7 @@ li {
 }
 .mask-btn {
   position: fixed;
-  top: 118px;
+  top: 220px;
   right: 200px;
   display: flex;
   align-items: center;
